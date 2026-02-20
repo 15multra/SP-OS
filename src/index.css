@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 30% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 206 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 25% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 206 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 206 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Windows 11 specific tokens */
+    --glass-bg: 210 25% 12% / 0.7;
+    --glass-border: 0 0% 100% / 0.1;
+    --taskbar-bg: 210 30% 10% / 0.9;
+    --window-bg: 210 25% 14%;
+    --hover-overlay: 0 0% 100% / 0.05;
+    
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(40px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  .taskbar-glass {
+    background: hsl(var(--taskbar-bg));
+    backdrop-filter: blur(60px) saturate(1.8);
+    border-top: 1px solid hsl(var(--glass-border));
+  }
+  
+  .window-shadow {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
