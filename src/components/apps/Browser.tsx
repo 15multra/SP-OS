@@ -21,7 +21,7 @@ export const Browser = () => {
         {/* Address Bar */}
         <div className="flex-1 h-9 bg-secondary/50 rounded-lg flex items-center px-3 gap-2 border border-border/50">
           <Lock className="w-4 h-4 text-green-500" />
-          <span className="text-sm flex-1">lovable.dev</span>
+          <span className="text-sm flex-1">sj-marco.dev</span>
           <Star className="w-4 h-4 text-muted-foreground hover:text-yellow-500 cursor-pointer transition-colors" />
         </div>
 
